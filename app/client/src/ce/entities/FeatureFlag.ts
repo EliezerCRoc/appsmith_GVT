@@ -81,7 +81,7 @@ export const DEFAULT_FEATURE_FLAG_VALUE: FeatureFlags = {
   release_appnavigationlogoupload_enabled: false,
   release_embed_hide_share_settings_enabled: false,
   release_table_serverside_filtering_enabled: false,
-  license_branding_enabled: false,
+  license_branding_enabled: true,
   license_sso_saml_enabled: false,
   license_sso_oidc_enabled: false,
   license_private_embeds_enabled: false,

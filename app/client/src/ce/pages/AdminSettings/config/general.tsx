@@ -35,8 +35,8 @@ export const APPSMITH_HIDE_WATERMARK_SETTING: Setting = {
   controlType: SettingTypes.CHECKBOX,
   label: "Appsmith watermark",
   text: "Hide Appsmith watermark",
-  isFeatureEnabled: false,
-  isDisabled: () => true,
+  isFeatureEnabled: true,
+  isDisabled: () => false,
   textSuffix: <BrandingBadge />,
 };
 

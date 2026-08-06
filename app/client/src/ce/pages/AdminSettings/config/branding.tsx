@@ -15,7 +15,7 @@ export const config: AdminConfigType = {
   type: SettingCategories.BRANDING,
   categoryType: CategoryType.ORGANIZATION,
   controlType: SettingTypes.PAGE,
-  canSave: false,
+  canSave: true,
   title: "Branding",
   icon: "pantone",
   component: BrandingPage,

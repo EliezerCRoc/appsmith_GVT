@@ -153,7 +153,7 @@ export function PageMenu(props: NavigationProps) {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <BrandingBadge />
+                  {/* <BrandingBadge /> */}
                 </a>
               )}
             </StyledCtaContainer>

@@ -31,8 +31,8 @@ if [[ ${1-} =~ ^-*h(elp)?$ ]]; then
 
 A single positional argument can be given to set the backend server proxy address. Example:
 
-'"$0"' https://localhost:8080
-'"$0"' https://host.docker.internal:8080
+'"$0"' https://localhost:8000
+'"$0"' https://host.docker.internal:8000
 '"$0"' https://release.app.appsmith.com
 '"$0"' release  # This is identical to the one above
 ' >&2
@@ -143,7 +143,7 @@ backend_host=${backend_host-$upstream_host}
 rts_host=${rts_host-$upstream_host}
 
 frontend_port=${frontend_port-3000}
-backend_port=${backend_port-8080}
+backend_port=${backend_port-8000}
 rts_port=${rts_port-8091}
 
 backend="${backend-http://$backend_host:$backend_port}"

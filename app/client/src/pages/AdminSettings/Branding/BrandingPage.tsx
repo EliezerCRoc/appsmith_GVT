@@ -32,7 +32,7 @@ interface BrandingPageProps {
 
 function BrandingPage(props: BrandingPageProps) {
   const { category } = props;
-  const isBrandingEnabled = category?.isFeatureEnabled ?? false;
+  const isBrandingEnabled = true;
   const organizationConfig = useSelector(getOrganizationConfig);
   const defaultValues = {
     brandColors: organizationConfig.brandColors,
