@@ -3,10 +3,9 @@ import {
   ReduxActionErrorTypes,
   ReduxActionTypes,
 } from "ee/constants/ReduxActionConstants";
-import {
+import APPSMITH_BRAND_PRIMARY_COLOR, {
   APPSMITH_BRAND_FAVICON_URL,
   APPSMITH_BRAND_LOGO_URL,
-  APPSMITH_BRAND_PRIMARY_COLOR,
   createBrandColorsFromPrimaryColor,
 } from "utils/BrandingUtils";
 import { createReducer } from "utils/ReducerUtils";
@@ -26,7 +25,10 @@ export interface OrganizationReduxState<T> {
   isFetchingMyOrganizations: boolean;
 }
 
+export const DEFAULT_BRAND_NAME = "Gravitar";
+
 export const defaultBrandingConfig = {
+  brandName: DEFAULT_BRAND_NAME,
   brandFaviconUrl: APPSMITH_BRAND_FAVICON_URL,
   brandColors: {
     ...createBrandColorsFromPrimaryColor(APPSMITH_BRAND_PRIMARY_COLOR),

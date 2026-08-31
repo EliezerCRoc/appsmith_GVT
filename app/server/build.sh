@@ -15,7 +15,7 @@ fi
 # Remove previous dist directory
 rm -rf dist/
 
-is_tests_enabled=true
+is_tests_enabled=false
 for i in "$@"; do
   if [[ $i == "-DskipTests" ]]; then
     is_tests_enabled=false

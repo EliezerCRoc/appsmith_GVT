@@ -1,20 +1,21 @@
 import _ from "lodash";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const getHtmlPageTitle = (instanceName: string) => {
-  return "Appsmith";
+// Default product name. Overridable per-instance via the Branding page
+// (organizationConfig.brandName); callers pass that value in as `brandName`.
+export const DEFAULT_BRAND_NAME = "Gravitar";
+
+export const getHtmlPageTitle = (brandName?: string) => {
+  return brandName || DEFAULT_BRAND_NAME;
 };
 
 export const isCEMode = () => {
   return true;
 };
 
-export const getPageTitle = (
-  displayName?: string,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  titleSuffix?: string,
-) => {
-  return `${displayName ? `${displayName} | ` : ""}Appsmith`;
+export const getPageTitle = (displayName?: string, titleSuffix?: string) => {
+  return `${displayName ? `${displayName} | ` : ""}${
+    titleSuffix || DEFAULT_BRAND_NAME
+  }`;
 };
 
 // TODO: Remove this function once we have a better way to handle this

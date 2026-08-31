@@ -39,9 +39,11 @@ html {
   align-items: center;
 }
 
-.appsmith-logo svg {
-  max-width: 110px;
-  width: 110px;
+.appsmith-logo svg,
+.appsmith-logo img {
+  max-width: 140px;
+  width: auto;
+  height: 32px;
 }
 
 .main {
@@ -101,14 +103,14 @@ html {
 }
 
 .primary {
-  background-color: #f86a2b;
+  background-color: #272eb8;
   color: #fff;
-  border: 1.2px solid #f86a2b;
+  border: 1.2px solid #272eb8;
 }
 
 .secondary {
   text-transform: uppercase;
   background-color: transparent;
-  color: #f86a2b;
-  border: 1.2px solid #f86a2b;
+  color: #272eb8;
+  border: 1.2px solid #272eb8;
 }

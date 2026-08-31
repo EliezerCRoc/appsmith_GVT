@@ -8,7 +8,7 @@ import type {
   UseFormResetField,
 } from "react-hook-form";
 import { Controller } from "react-hook-form";
-import { Button, Icon, NumberInput, Text, Tooltip } from "@appsmith/ads";
+import { Button, Icon, Input, NumberInput, Text, Tooltip } from "@appsmith/ads";
 
 import type { Inputs } from "./BrandingPage";
 import {
@@ -72,6 +72,41 @@ function SettingsForm(props: SettingsFormProps) {
       className="flex flex-col flex-grow gap-4"
       onSubmit={handleSubmit(onSubmit)}
     >
+      {/* BRAND NAME */}
+      <div className="flex flex-col gap-2">
+        <StyledText
+          color="var(--ads-v2-color-fg)"
+          htmlFor="brandName"
+          kind="body-m"
+          renderAs="label"
+        >
+          Brand name
+        </StyledText>
+        <Controller
+          control={control}
+          name="brandName"
+          render={({ field: { onChange, value } }) => (
+            <Input
+              className="t--settings-brand-name-input"
+              onChange={(val: string) => {
+                onChange(val);
+                AnalyticsUtil.logEvent("BRANDING_PROPERTY_UPDATE", {
+                  propertyName: "brandName",
+                });
+              }}
+              placeholder="Gravitar"
+              renderAs="input"
+              size="md"
+              type="text"
+              value={value ?? ""}
+            />
+          )}
+        />
+        <HelperText renderAs="p">
+          Shown in the browser tab, on the login page, and beside the logo.
+        </HelperText>
+      </div>
+
       {/* LOGO */}
       <div className="flex flex-col gap-2">
         <StyledText

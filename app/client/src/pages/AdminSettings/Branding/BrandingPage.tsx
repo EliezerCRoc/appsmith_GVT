@@ -8,7 +8,6 @@ import { getOrganizationConfig } from "ee/selectors/organizationSelectors";
 import { Wrapper } from "pages/AdminSettings/Authentication/AuthPage";
 
 import { getAssetUrl } from "ee/utils/airgapHelpers";
-import type { AdminConfigType } from "ee/pages/AdminSettings/config/types";
 import { getUpgradeBanner } from "ee/utils/BusinessFeatures/brandingPageHelpers";
 
 export type brandColorsKeys =
@@ -19,6 +18,7 @@ export type brandColorsKeys =
   | "disabled";
 
 export interface Inputs {
+  brandName: string;
   brandColors: Record<brandColorsKeys, string>;
   brandLogo: string;
   brandFavicon: string;
@@ -26,15 +26,11 @@ export interface Inputs {
   logoHeight?: number;
 }
 
-interface BrandingPageProps {
-  category: AdminConfigType;
-}
-
-function BrandingPage(props: BrandingPageProps) {
-  const { category } = props;
+function BrandingPage() {
   const isBrandingEnabled = true;
   const organizationConfig = useSelector(getOrganizationConfig);
   const defaultValues = {
+    brandName: organizationConfig.brandName,
     brandColors: organizationConfig.brandColors,
     brandLogo: organizationConfig.brandLogoUrl,
     brandFavicon: organizationConfig.brandFaviconUrl,
@@ -61,6 +57,7 @@ function BrandingPage(props: BrandingPageProps) {
    */
   useEffect(() => {
     reset({
+      brandName: organizationConfig.brandName,
       brandColors: organizationConfig.brandColors,
       brandLogo: organizationConfig.brandLogoUrl,
       brandFavicon: organizationConfig.brandFaviconUrl,

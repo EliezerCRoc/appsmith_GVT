@@ -128,8 +128,8 @@ export function SignUp(props: SignUpFormProps) {
     FEATURE_FLAG.license_branding_enabled,
   );
   const organizationConfig = useSelector(getOrganizationConfig);
-  const { instanceName } = organizationConfig;
-  const htmlPageTitle = getHTMLPageTitle(isBrandingEnabled, instanceName);
+  const { brandName } = organizationConfig;
+  const htmlPageTitle = getHTMLPageTitle(isBrandingEnabled, brandName);
   const isCloudBillingEnabled = useIsCloudBillingEnabled();
   const isHostnameEqualtoLogin = isLoginHostname();
 

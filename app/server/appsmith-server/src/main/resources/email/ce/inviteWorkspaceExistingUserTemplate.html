@@ -315,9 +315,9 @@
                                       <tr>
                                         <td>
                                           <img
-                                            alt=""
+                                            alt="{{brandName}}"
                                             height="36"
-                                            src="https://assets.appsmith.com/appsmith-logo-no-margin.png"
+                                            src="{{{brandLogoUrl}}}"
                                             style="
                                               border: 0;
                                               display: block;
@@ -326,8 +326,8 @@
                                               height: 36px;
                                               width: auto;
                                             "
-                                            title=""
-                                            width="200"
+                                            title="{{brandName}}"
+                                            width="123"
                                           />
                                         </td>
                                       </tr>
@@ -385,7 +385,7 @@
                                           line-height: 1.43;
                                         "
                                         >{{inviterFirstName}} has given you
-                                        {{role}} access to the Appsmith
+                                        {{role}} access to the {{brandName}}
                                         workspace
                                         {{inviterWorkspaceName}}.</span
                                       >
@@ -414,7 +414,7 @@
                                           color: #4c5664;
                                           line-height: 1.43;
                                         "
-                                        >Go to your Appsmith workspace to
+                                        >Go to your {{brandName}} workspace to
                                         see fast, usable, beautiful apps.</span
                                       >
                                     </p>
@@ -447,14 +447,14 @@
                                       <tr>
                                         <td
                                           align="center"
-                                          bgcolor="#f86a2b"
+                                          bgcolor="#272eb8"
                                           role="none"
                                           style="
                                             border: none;
                                             border-radius: 4px 4px 4px 4px;
                                             cursor: auto;
                                             mso-padding-alt: 12px 0px 12px 0px;
-                                            background: #f86a2b;
+                                            background: #272eb8;
                                             color: #ffffff;
                                           "
                                           valign="middle"
@@ -466,7 +466,7 @@
                                               font-family: SF Pro Text, Arial,
                                                 sans-serif;
                                               font-size: 14px;
-                                              background: #f86a2b;
+                                              background: #272eb8;
                                               color: #ffffff;
                                               font-weight: normal;
                                               line-height: 100%;
@@ -487,7 +487,7 @@
                                                 line-height: 1.43;
                                                 color: #ffffff;
                                               "
-                                              >Go to your Appsmith
+                                              >Go to your {{brandName}}
                                               workspace</span
                                             ></a
                                           >
@@ -518,9 +518,7 @@
                                           color: #6a7585;
                                           line-height: 1.43;
                                         "
-                                        >1390, Market Street, Suite 200, San
-                                        Francisco, California 94102, United
-                                        States</span
+                                        >{{brandName}}</span
                                       >
                                     </p>
                                   </div>

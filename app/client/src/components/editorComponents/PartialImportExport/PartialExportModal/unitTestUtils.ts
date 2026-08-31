@@ -20748,7 +20748,8 @@ export const defaultAppState = {
         font: "#fff",
         disabled: "#fce4da",
       },
-      brandLogoUrl: "https://assets.appsmith.com/appsmith-logo-no-margin.png",
+      brandLogoUrl:
+        "https://gravitar.biz/wp-content/uploads/2020/03/LOGO-WS-02-1.png",
       isFormLoginEnabled: true,
       instanceName: "Appsmith",
       license: {

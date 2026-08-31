@@ -17,11 +17,11 @@ export const getUpgradeBanner = (isEnabled: boolean) => {
   } else return <UpgradeBanner_CE />;
 };
 
-export const getHTMLPageTitle = (isEnabled: boolean, instanceName: string) => {
+export const getHTMLPageTitle = (isEnabled: boolean, brandName?: string) => {
   if (isEnabled) {
-    return getHtmlPageTitle_EE(instanceName);
+    return getHtmlPageTitle_EE(brandName as string);
   } else {
-    return getHtmlPageTitle_CE(instanceName);
+    return getHtmlPageTitle_CE(brandName);
   }
 };
 

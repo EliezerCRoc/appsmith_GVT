@@ -5,7 +5,7 @@ import type {
 } from "@betterbugs/web-sdk";
 import { getAppsmithConfigs } from "ee/configs";
 import log from "loglevel";
-import { APPSMITH_BRAND_PRIMARY_COLOR } from "utils/BrandingUtils";
+import APPSMITH_BRAND_PRIMARY_COLOR from "utils/BrandingUtils";
 import { isAirgapped } from "ee/utils/airgapHelpers";
 
 /**

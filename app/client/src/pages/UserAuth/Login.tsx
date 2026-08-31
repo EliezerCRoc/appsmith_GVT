@@ -111,8 +111,8 @@ export function Login(props: LoginFormProps) {
   );
   const organizationConfig = useSelector(getOrganizationConfig);
   const withinOrg = useSelector(isWithinAnOrganization);
-  const { displayName, instanceName, slug } = organizationConfig;
-  const htmlPageTitle = getHTMLPageTitle(isBrandingEnabled, instanceName);
+  const { brandName, displayName, slug } = organizationConfig;
+  const htmlPageTitle = getHTMLPageTitle(isBrandingEnabled, brandName);
   const invalidCredsForgotPasswordLinkText = createMessage(
     LOGIN_PAGE_INVALID_CREDS_FORGOT_PASSWORD_LINK,
   );

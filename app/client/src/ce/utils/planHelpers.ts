@@ -1,8 +1,11 @@
 import type { FeatureFlags } from "ee/entities/FeatureFlag";
 
 //if feature flag is true then return feature is enabled
+// Branding is unlocked for every user on this CE build (persisted server-side
+// via OrganizationConfiguration branding fields), so this is always on.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const isBrandingEnabled = (featureFlags: FeatureFlags) => {
-  return featureFlags?.license_branding_enabled;
+  return true;
 };
 
 export const isOIDCEnabled = (featureFlags: FeatureFlags) => {

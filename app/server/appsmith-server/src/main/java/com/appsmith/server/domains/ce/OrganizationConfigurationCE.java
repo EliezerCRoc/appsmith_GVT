@@ -79,6 +79,27 @@ public class OrganizationConfigurationCE implements Serializable {
     @JsonInclude
     private AIAssistantConfig aiAssistantConfig;
 
+    // Branding — persisted for all users on this instance (CE has no license gate).
+    // `brandColors` is an opaque map owned by the client
+    // (primary/background/hover/active/font/disabled). Logo/favicon are stored as
+    // data URIs so no separate asset upload endpoint is required.
+    // NON_NULL (not @JsonInclude): when a field is unset the client keeps its
+    // baked-in default instead of having it overwritten with null by the spread.
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String brandName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Map<String, String> brandColors;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String brandLogoUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String brandFaviconUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Boolean hideWatermark;
+
     public void addThirdPartyAuth(String auth) {
         if (thirdPartyAuths == null) {
             thirdPartyAuths = new ArrayList<>();
@@ -106,6 +127,12 @@ public class OrganizationConfigurationCE implements Serializable {
         migrationStatus = organizationConfiguration.getMigrationStatus();
         isStrongPasswordPolicyEnabled = organizationConfiguration.getIsStrongPasswordPolicyEnabled();
         isAtomicPushAllowed = organizationConfiguration.getIsAtomicPushAllowed();
+
+        brandName = ObjectUtils.defaultIfNull(organizationConfiguration.getBrandName(), brandName);
+        brandColors = ObjectUtils.defaultIfNull(organizationConfiguration.getBrandColors(), brandColors);
+        brandLogoUrl = ObjectUtils.defaultIfNull(organizationConfiguration.getBrandLogoUrl(), brandLogoUrl);
+        brandFaviconUrl = ObjectUtils.defaultIfNull(organizationConfiguration.getBrandFaviconUrl(), brandFaviconUrl);
+        hideWatermark = ObjectUtils.defaultIfNull(organizationConfiguration.getHideWatermark(), hideWatermark);
 
         AIAssistantConfig sourceAiConfig = organizationConfiguration.getAiAssistantConfig();
         if (sourceAiConfig != null) {

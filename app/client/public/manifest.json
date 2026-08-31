@@ -1,15 +1,15 @@
 {
-  "short_name": "Appsmith App",
-  "name": "Appsmith Client Web UI",
+  "short_name": "Gravitar",
+  "name": "Gravitar",
   "icons": [
     {
-      "src": "static/img/favicon-orange.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "gravitar-icon.png",
+      "sizes": "512x512 192x192 64x64 32x32 24x24 16x16",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#272eb8",
   "background_color": "#ffffff"
 }

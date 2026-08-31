@@ -81,7 +81,7 @@ export function PageWrapper(props: PageWrapperProps) {
     FEATURE_FLAG?.license_branding_enabled,
   );
   const organizationConfig = useSelector(getOrganizationConfig);
-  const { instanceName } = organizationConfig;
+  const { brandName } = organizationConfig;
   const isMobile = useIsMobileDevice();
   // Match PageHeader: when the base-url-missing banner is visible, push content
   // below it for both fixed (Admin Settings) and non-fixed wrappers so consumers
@@ -95,8 +95,8 @@ export function PageWrapper(props: PageWrapperProps) {
     : 0;
 
   const titleSuffix = useMemo(
-    () => getHTMLPageTitle(isBrandingEnabled, instanceName),
-    [isBrandingEnabled, instanceName],
+    () => getHTMLPageTitle(isBrandingEnabled, brandName),
+    [isBrandingEnabled, brandName],
   );
 
   const pageTitle = useMemo(
